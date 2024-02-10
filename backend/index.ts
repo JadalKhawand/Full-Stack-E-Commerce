@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import UserController from "./controllers/UserController";
+import StoreController from "./controllers/StoreController";
 
 dotenv.config();
 
@@ -19,7 +20,13 @@ app.use(express.json());
 
 app.use(cors());
 
+
+
+// user login / register
 app.use("/api/v1/user", UserController);
+
+// Store 
+app.use("/api/v1/store", StoreController)
 
 mongoose.set("strictQuery", false);
 mongoose.connect(DATABASE_URL).then(() => {

@@ -2,10 +2,10 @@ import express, { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
-const secret = process.env.SECRET_TOKEN;
+const secret = process.env.TOKEN_SECRET;
 
 interface AuthenticatedRequest extends Request {
-  decoded: any; 
+  decoded?: any; 
 }
 
 if (!secret)
