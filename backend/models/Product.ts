@@ -28,7 +28,7 @@ const ProductSchema = new Schema({
     type: [String],
     required: true,
   },
-  sumOfRatings: {
+sumOfRatings: {
     type: Number,
     default: 0
 },
