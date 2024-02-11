@@ -48,8 +48,11 @@ ReviewController.post("/create", auth, async (req, res) => {
       rating,
       comment,
     });
-    const product = await Product.find({ _id: productId });
-    const newSumOfRatings = product?.sumOfRatings + rating
+    const product = await Product.findOne({ _id: productId });
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    const newSumOfRatings = product?.sumOfRatings + rating 
     const newNumberOfReviews = (product?.numberOfReviews || 0) + 1;
     const updatedProduct = await Product.findByIdAndUpdate(
       {
