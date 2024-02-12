@@ -3,9 +3,9 @@ import Review from "../models/Review";
 import Product from "../models/Product";
 import { auth } from "../middleware/auth";
 
-const ReviewController = express.Router();
+const ReviewsController = express.Router();
 
-ReviewController.get("/", async (req, res) => {
+ReviewsController.get("/", async (req, res) => {
   try {
     // @ts-ignore
     const userId = req?.decoded.user._id;
@@ -18,7 +18,7 @@ ReviewController.get("/", async (req, res) => {
   }
 });
 
-ReviewController.get("/:product_id", async (req, res) => {
+ReviewsController.get("/:product_id", async (req, res) => {
   try {
     if (!req.params.product_id) {
       return;
@@ -35,7 +35,7 @@ ReviewController.get("/:product_id", async (req, res) => {
   }
 });
 
-ReviewController.post("/create", auth, async (req, res) => {
+ReviewsController.post("/create", auth, async (req, res) => {
   try {
     // @ts-ignore
     const userId = req?.decoded.user._id;
@@ -73,4 +73,4 @@ ReviewController.post("/create", auth, async (req, res) => {
     res.status(400).json({ error: "Failed to create review!" });
   }
 });
-export default ReviewController;
+export default ReviewsController;
