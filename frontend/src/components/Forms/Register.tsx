@@ -56,10 +56,12 @@ function Register() {
         </h1>
         <br />
         <span className={formInputRowStyle}>
-          <label htmlFor="user-name" className="mt-1">UserName: </label>
+          <label htmlFor="user-name" className="mt-1">
+            UserName:{" "}
+          </label>
           <input
             type="text"
-            name="user-name"git 
+            name="user-name"
             id="user-name"
             value={userName}
             onChange={(e) => {
@@ -69,7 +71,9 @@ function Register() {
         </span>
 
         <span className={formInputRowStyle}>
-          <label htmlFor="register-user-email" className="mt-1">Email:</label>
+          <label htmlFor="register-user-email" className="mt-1">
+            Email:
+          </label>
           <input
             type="text"
             name="register-user-email"
@@ -82,7 +86,9 @@ function Register() {
         </span>
 
         <span className={formInputRowStyle}>
-          <label htmlFor="register-user-pass" className="mt-1">Password:</label>
+          <label htmlFor="register-user-pass" className="mt-1">
+            Password:
+          </label>
           <input
             type="password"
             name="register-user-pass"
@@ -95,7 +101,9 @@ function Register() {
         </span>
 
         <span className={formInputRowStyle}>
-          <label htmlFor="confirm-register-user-pass" className="mt-1">ConfirmPassword:</label>
+          <label htmlFor="confirm-register-user-pass" className="mt-1">
+            ConfirmPassword:
+          </label>
           <input
             type="password"
             name="confirm-register-user-pass"

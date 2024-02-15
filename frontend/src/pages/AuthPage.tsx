@@ -9,21 +9,21 @@ function AuthPage() {
 
   const { token } = useCommerceStore();
 
-  useEffect(() => {
-    if (token) {
-      return navigate("/home");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (token) {
+  //     return navigate("/home");
+  //   }
+  // }, []);
 
   return (
-    <div className="flex items-center flex-wrap justify-center">
+    <div className="flex mt-10 items-center flex-wrap justify-center p-4">
       <div className="auth w-1/2 min-w-[400px]">
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
-      <div className="graphic w-1/2 p-4 min-w-[400px]">
+      <div className="graphic  w-1/3 p-4 min-w-[300px]">
         <img
           src="https://www.shutterstock.com/image-vector/isometric-smart-phone-online-shopping-600w-1049832146.jpg"
           alt="test"
