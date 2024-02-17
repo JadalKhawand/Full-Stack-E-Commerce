@@ -17,10 +17,10 @@ function Header() {
     }
   }, [token]);
   return (
-    <div className="flex flex-col p-3">
+    <div className="flex flex-col p-2">
       <div className="flex flex-row justify-between px-6 items-center">
         <div className="flex ">
-          <img width={40} src="/iconimage.png" alt="Ecommerce store logo" />
+          <img width={50} src="/iconimage.png" alt="Ecommerce store logo" />
           <p className="flex items-center gap-2">
             Hello
             <Link to={"/auth/login"} className="text-blue-600">
@@ -32,7 +32,7 @@ function Header() {
             </Link>
           </p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex items-center gap-3">
           <Link to="/home">Home</Link>
           <Link to="/sell">Sell</Link>
           {decodedToken?.user?.store && (

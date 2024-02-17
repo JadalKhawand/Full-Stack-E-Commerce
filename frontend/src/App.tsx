@@ -10,6 +10,7 @@ function App() {
       <Header />
       <div className="overflow-y-scroll w-full">
         <Routes>
+          
           <Route path="/auth/*" element={<AuthPage />} />
         </Routes>
       </div>
