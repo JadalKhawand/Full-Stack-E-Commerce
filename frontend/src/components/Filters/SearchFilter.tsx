@@ -1,5 +1,5 @@
 import React from "react";
-import { useCommerceStore } from "../store";
+import { useCommerceStore } from "../../store";
 
 function SearchFilter() {
   const { searchFilter, setSearchFilter } = useCommerceStore();

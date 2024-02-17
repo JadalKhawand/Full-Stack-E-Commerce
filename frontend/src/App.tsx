@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import AuthPage from "./pages/AuthPage";
 import Header from "./components/Store/Header";
-import FiltersBar from "./Filters/FiltersBar";
+import FiltersBar from "./components/Filters/FiltersBar";
 import { useCommerceStore } from "./store";
 
 function App() {
