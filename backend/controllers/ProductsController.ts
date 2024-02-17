@@ -10,7 +10,7 @@ const ProductsController = express.Router()
 ProductsController.post('/create', auth, productUploads.array('pictures', 10), async (req, res) => {
     try {
         // @ts-ignore
-        const userId = req.decoded.user._id
+        const userId = req?.decoded?.user._id
 
         const store = await Store.findOne({
             owner: userId
