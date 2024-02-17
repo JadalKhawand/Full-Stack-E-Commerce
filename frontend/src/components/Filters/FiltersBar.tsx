@@ -7,7 +7,7 @@ import Sorting from "./Sorting"
 function FiltersBar() {
   // TODO
   return (
-    <div className="flex gap-4 px-6 py-4 pt-0">
+    <div className="flex gap-4 justify-between px-6 py-4 pt-0">
       <CategoryFilter />
       <SearchFilter />
       <FavoritesFilter />
