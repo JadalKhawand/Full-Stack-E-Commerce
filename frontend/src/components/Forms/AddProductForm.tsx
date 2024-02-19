@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useCommerceStore } from "../../store"
 import { defaultProduct, greenButtonStyle, homeAPI } from "../../shared/constants"
-
+import axios from 'axios'
 function AddProductForm({ product, setProduct }: { product: any, setProduct: Function }) {
 
     const {
@@ -33,10 +33,21 @@ function AddProductForm({ product, setProduct }: { product: any, setProduct: Fun
             },
             body: formData
         })
-            .then(response => response.json())
-            .then(response => {
-                setProduct(defaultProduct)
-            })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(response => {
+            setProduct(defaultProduct);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            
+        });
+        
+        
     }
 
     // TODO add placeholders to all inputs
