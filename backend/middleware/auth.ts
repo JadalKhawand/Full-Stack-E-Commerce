@@ -5,14 +5,17 @@ dotenv.config();
 const secret = process.env.TOKEN_SECRET;
 
 interface AuthenticatedRequest extends Request {
-  decoded?: any; 
+  decoded?: any;
 }
 
 if (!secret)
   throw new Error("Please add the TOKEN_SECRET variable in .env file");
 
-
-export const auth = (req: AuthenticatedRequest, res: Response, next: Function) => {
+export const auth = (
+  req: AuthenticatedRequest,
+  res: Response,
+  next: Function
+) => {
   try {
     const token = req.get("Authorization")?.split(" ")[1];
 

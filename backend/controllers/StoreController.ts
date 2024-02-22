@@ -7,7 +7,7 @@ import multer from "multer";
 import { logoUploads } from "../middleware/multer";
 import dotenv from "dotenv";
 import { superAdmins } from "../shared/constants";
-dotenv.config()
+dotenv.config();
 const secret = process.env.TOKEN_SECRET;
 if (!secret) throw new Error("add a secret variable in the env file");
 const upload = multer({ dest: "./public/logos" });

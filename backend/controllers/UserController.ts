@@ -45,14 +45,14 @@ UserController.post("/login", async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    const verification = bcrypt.compare(password,user.password)
+    const verification = bcrypt.compare(password, user.password);
     let token = jwt.sign({ user: { ...user?.toJSON(), password: "" } }, secret);
     console.log(user);
-    res.json({token})
+    res.json({ token });
   } catch (error) {
-    console.log(error)
-    res.status(400).json({error: "Unable to login"})
+    console.log(error);
+    res.status(400).json({ error: "Unable to login" });
   }
 });
 
-export default UserController
+export default UserController;
